@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recipe Detail</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="recipe-container">
+        <header>
+            <div class="logo">
+                <img src="images/chef.png" alt="" class="logo-image">
+                &nbsp;  <h1 class="logo-text">The Recipe Hub</h1>
+            </div>
+            <i class="fa fa-bars menu-toggle"></i>
+            <nav class="header-list">
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Recipe</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <!-- Recipe Detail Section -->
+        <div class="recipe-detail">
+            <h1 class="recipe-title" id="recipe-name">Pancakes with Maple Syrup</h1>
+            <img src="images/chinesefood.jpg" alt="Recipe Image" class="recipe-image" id="recipe-image">
+
+            <div class="recipe-info">
+                <div class="ingredients">
+                    <h3>Ingredients</h3>
+                    <ul id="ingredients-list">
+                        
+                    </ul>
+                </div>
+
+               
+            </div>
+
+            <button  class="back-btn" onclick="window.location.href='index.html'">Back to Recipes</button>
+        </div>
+    </div>
+
+    <script>
+        // Example of dynamically loading the recipe details based on URL parameters or localStorage
+        window.onload = function() {
+            const recipeName = "Pancakes with Maple Syrup"; // Example name, this can be passed from the previous page
+            const recipeImage = "images/chinesefood.jpg"; // Example image, update based on actual recipe
+            const ingredients = [
+                "1 cup all-purpose flour",
+                "1 tablespoon sugar",
+                "1 tablespoon baking powder",
+                "1/4 teaspoon salt",
+                "2 tablespoons butter, melted",
+                "Maple syrup, for serving"
+            ];
+
+            // Populate the page with the recipe details
+            document.getElementById('recipe-name').innerText = recipeName;
+            document.getElementById('recipe-image').src = recipeImage;
+
+            // Update ingredients list
+            const ingredientsList = document.getElementById('ingredients-list');
+            ingredients.forEach(ingredient => {
+                const li = document.createElement('li');
+                li.textContent = ingredient;
+                ingredientsList.appendChild(li);
+            });
+
+            // Update recipe steps
+            const recipeSteps = document.getElementById('recipe-steps');
+            steps.forEach(step => {
+                const li = document.createElement('li');
+                li.textContent = step;
+                recipeSteps.appendChild(li);
+            });
+        };
+    </script>
+</body>
+</html>
